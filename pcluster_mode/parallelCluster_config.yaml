@@ -1,0 +1,53 @@
+Imds:
+  ImdsSupport: v2.0
+HeadNode:
+  InstanceType: g5.16xlarge
+  Imds:
+    Secured: true
+  Ssh:
+    KeyName: My_ssh_key
+  LocalStorage:
+    RootVolume:
+      VolumeType: gp3
+      Size: 250
+  Networking:
+    SubnetId: subnet-999999999999999
+    AdditionalSecurityGroups:
+      - sg-99999999999999
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+    - Name: queue-1
+      AllocationStrategy: lowest-price
+      ComputeResources:
+        - Name: queue-1-cr-1
+          Instances:
+            - InstanceType: g5.16xlarge
+          MaxCount: 200
+          MinCount: 100
+      ComputeSettings:
+        LocalStorage:
+          RootVolume:
+            VolumeType: gp3
+            Size: 250
+      Networking:
+        SubnetIds:
+          - subnet-9999999999999
+        PlacementGroup: {}
+        AdditionalSecurityGroups:
+          - sg-99999999999999
+  SlurmSettings:
+    ScaledownIdletime: 10
+    QueueUpdateStrategy: TERMINATE
+Region: us-east-1
+Image:
+  Os: ubuntu2004
+SharedStorage:
+  - Name: Efs0
+    StorageType: Efs
+    MountDir: /mnt/efs
+    EfsSettings:
+      FileSystemId: fs-9999999999999
+Tags:
+  - Key: parallelcluster-ui
+    Value: 'true'
