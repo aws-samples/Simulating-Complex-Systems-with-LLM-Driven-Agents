@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains code for an advanced Agent-Based Model (ABM) simulation of energy supply chains, incorporating Large Language Models (LLMs) to represent complex decision-making processes of various agents, including energy producers and utilities. The simulation aims to capture nuanced behaviors, including emotional responses and intricate interactions, going beyond traditional mathematical rule-based ABMs. This is NOT a validated model and serves as an example for someone to learn from. Please see the [blog](www.google.com) which discuss this repo in more details. 
+This repository contains code for an advanced Agent-Based Model (ABM) simulation of energy supply chains, incorporating Large Language Models (LLMs) to represent complex decision-making processes of various agents, including energy producers and utilities. The simulation aims to capture nuanced behaviors, including emotional responses and intricate interactions, going beyond traditional mathematical rule-based ABMs. This is NOT a validated model and serves as an example for someone to learn from. Please see the [blog](https://aws.amazon.com/blogs/hpc/simulating-complex-systems-with-llm-driven-agents-leveraging-aws-parallelcluster-for-scalable-ai-experiments/) which discuss this repo in more details. 
 
 ## Key Features
 
@@ -35,7 +35,7 @@ In addition, the head node will also require the installation of the python depe
 
     ```python3.11 -m pip install -r requirments.txt```
 
-4. Next we will run the bootstrap.sh on each compute node, it can optionally be implemented as a start up script inside the ParalleCluster depooyment. 
+4. Next we will run the bootstrap.sh on each compute node, it can optionally be implemented as a start up script inside the ParalleCluster deployment. 
 
     ```python ./pcluster_mode/update_compute_nodes.py --action bootstrap```
 
